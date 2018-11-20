@@ -76,12 +76,12 @@ func NewAuditorWithLogger(logger ValidationLogger) *Auditor {
 // Compare checks the contents of newFile for breaking changes with respect to
 // oldFile
 func (a *Auditor) Audit(oldFile, newFile string) error {
-	newFrugal, err := ParseFrugal(newFile)
+	newFrugal, err := ParseFrugal(newFile, nil)
 	if err != nil {
 		return err
 	}
 
-	oldFrugal, err := ParseFrugal(oldFile)
+	oldFrugal, err := ParseFrugal(oldFile, nil)
 	if err != nil {
 		return err
 	}
