@@ -59,7 +59,6 @@ func Compile(options Options) error {
 		return err
 	}
 
-	println("*****", options.IncludeDirs)
 	frugal, err := parseFrugal(absFile, options.IncludeDirs)
 	if err != nil {
 		return err

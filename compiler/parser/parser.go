@@ -80,7 +80,7 @@ func parseFrugal(filePath string, visitedIncludes []string, includeDirs []string
 		}
 
 		inc := include
-		if include[0] != '/' {
+		if !filepath.IsAbs(inc) {
 			inc = filepath.Join(frugal.Dir, include)
 		}
 
