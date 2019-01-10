@@ -129,7 +129,7 @@ func main() {
 			if audit == "" {
 				err = compiler.Compile(options)
 			} else {
-				err = auditor.Audit(audit, options.File)
+				err = auditor.Audit(audit, options.File, []string{include})
 			}
 			if err != nil {
 				fmt.Printf("Failed to generate %s:\n\t%s\n", options.File, err.Error())
