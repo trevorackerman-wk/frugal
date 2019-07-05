@@ -111,7 +111,6 @@ public class FNatsTransport extends FAsyncTransport {
     @Override
     public void close() {
         if (dispatcher != null) {
-            dispatcher.unsubscribe(subject);
             conn.closeDispatcher(dispatcher);
             dispatcher = null;
         }
